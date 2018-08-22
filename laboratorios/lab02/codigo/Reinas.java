@@ -1,84 +1,54 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
+
+import static java.util.Arrays.fill;
 
 /**
- * Write a description of class Reinas here.
- *
- * @Juan Felipe Londoño Gaviria && Juan Pablo Giraldo Restrepo
- * @18/08/2018
- * 
- * 
+ * This method is used for adding queens to the chess table
  */
-public class Reinas
-{
-    
-  private static int numS;
-    
-  
-  /** Método para comprobar si puedo poner reina.
-   * 
-   * 
-   */
-    private static boolean puedoPonerReina(int r, int[] tablero) {
-        for(int i = 0; i < r; i++){
-           if(tablero[i] == tablero[r])
-                return false;
-           if(Math.abs(tablero[i] - tablero[r]) == Math.abs(i - r))
-                return false;
+public class Reinas {
+    public static int prueba(int mat [][],int queens){
+        int size = mat.length;
+        int pos = 0;
+        int soluciones = 0;
+        for(int i = 0 ; i < size ; i++){
+            for(int j = 0 ; j < size ; j++){
+                if(esValido(mat, size) && mat[i][j]!=2){//2 significa cuando es un asterisco
+                    mat[i][j]=1;
+                    pos++;
+                }
+                if(pos==queens){
+                    soluciones++;
+                    for (int[] row : mat){
+                        Arrays.fill(row, 0);
+                    }
+                break;
+                }
+                
+            }
+
+
+        }
+        return soluciones;
+    }
+
+    public static boolean esValido(int mat[][], int size){
+        int sum = 0;
+        for(int i = 0;i < size;i++){
+            for(int j = 0; j < size; j++){
+                if(mat[i][j]==1){
+                   sum++;
+                }
+            }
+            if(sum > 1)return false;
         }
         return true;
     }
-    
-    
-    /**Método a ejecutar
-     * 
-     * Es el que imprime el tablero con las reinas ya ubicadas
-     */
-    public static int nReinas(int n) {
-        numS = 0;
-        int[] tablero = new int[n];
-        return nReinas(0, n, tablero);
-    }
-    
-    
-    /**
-     * Método privado el cual es el encargado de ubicar las reinas.
-     */
-    private static int nReinas(int r, int n, int[] tablero) {
-        if (r == n){
-            //imprimirTablero(tablero);
-            numS++;
-        }else{
-            for(int i = 0; i < n; i++){
-                tablero[r] = i;
-                if(puedoPonerReina(r, tablero))
-                    nReinas(r+1, n, tablero);
-            }
-        }
-        return numS;
-    }
-    
-    
-    /** Método para imprimir el tablero
-     * 
-     */
-    public static void imprimirTablero(int[] tablero) {
-        int n = tablero.length;
-        System.out.print("    ");
-        for (int i = 0; i < n; ++i)
-            System.out.print(i + " ");
-        System.out.println("\n");
-        for (int i = 0; i < n; ++i) {
-            System.out.print(i + "   ");
-            for (int j = 0; j < n; ++j)
-                System.out.print((tablero[i] == j ? "Q" : "#") + " ");
-            System.out.println();
-        }
-        System.out.println();
-    }
-    
-    public static void main(String [] args) {
-        long m = System.currentTimeMillis();
-        nReinas(17);
-        System.out.println(System.currentTimeMillis()-m);    
-     
+
+    public static void main(String[] args) {
+
     }
 }
