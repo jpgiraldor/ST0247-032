@@ -7,6 +7,7 @@
  */
 public class Punto13
 {
+     //Se encarga de encontrar el número de carácteres que tienen en común dos cadenas de String, LCS. Es decir, ejemplo: Casa, Casado, el resultado es 4 porqué los dos strings tienen Casa en común.
      public static int LCS(String a, String b){
 
         int [][] table = new int [a.length()+1][b.length()+1];
