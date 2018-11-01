@@ -1,10 +1,19 @@
-public class Depot extends Station {
+public class Depot {
 
-    public Depot(int id, String name, double posX, double posY, int sType){
-        super(id, name, posX, posY, sType);
+    int StationType;          //0 = Rápido, 1= Medio, 2= Lento
+    int idNode;
+    String name;
+    double posX;
+    double posY;
+
+
+
+    //Constructor Station
+    public Depot (int id, String name, double X, double Y, int sType) {
         this.idNode = id;
         this.name = name;
-        this.posX = posX;
-        this.posY = posY;
+        this.posX = X;
+        this.posY = Y;
+        this.StationType = sType;
     }
 }
