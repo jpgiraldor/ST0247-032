@@ -1,12 +1,14 @@
 
 
-public class Station extends Node{
+public class Station{
 
-    int StationType;          //0 = Rápido, 1= Medio, 2= Lento
-    double L = {0.51, 1.01, 2.04}; // Tiempo de carga en horas para cada tipo de estación {Rápido, Medio, Lento}
-    //double G;                 // Nivel de la batería en watts/hora para cada tipo de estación y para cada punto de soporte
-
-    int 
+   int StationType;          //0 = Rápido, 1= Medio, 2= Lento
+    double[] L = {0.51, 1.01, 2.04}; // Tiempo de carga en horas para cada tipo de estación 
+    double G;                 // Nivel de la batería en watts/hora para cada tipo de estación y para cada punto de soporte
+    int idNode;
+    String name;
+    double posX;
+    double posY;
 
 
 
