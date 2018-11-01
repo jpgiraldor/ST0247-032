@@ -1,19 +1,21 @@
 public class Depot {
+    public int nodo,StationType;
+    public String name;
+    public double x,y;
 
-    int StationType;          //0 = Rápido, 1= Medio, 2= Lento
-    int idNode;
-    String name;
-    double posX;
-    double posY;
-
-
-
-    //Constructor Station
-    public Depot (int id, String name, double X, double Y, int sType) {
-        this.idNode = id;
+    /**
+     * Constructor for the depot class
+     * @param nodo
+     * @param name
+     * @param x
+     * @param y
+     * @param StationType
+     */
+    public Depot(int nodo, String name, double x, double y, int StationType){
+        this.nodo = nodo;
         this.name = name;
-        this.posX = X;
-        this.posY = Y;
-        this.StationType = sType;
+        this.x = x;
+        this.y = y;
+        this.StationType = StationType;
     }
 }
