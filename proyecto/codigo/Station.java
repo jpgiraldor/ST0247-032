@@ -20,26 +20,7 @@ public class Station{
         this.posY = Y;
         this.StationType = sType;
 
-}
-    //Obtener L
-    public double getL() {
-        return L;
     }
-
-    //Obtener G
-    //public double getG() {
-    //    return G;
-    //}
-
-    //Setear L
-    public void setL(double l) {
-        L = l;
-    }
-
-    //Setear G
-    //public void setG(double g) {
-    //    G = g;
-    //}
 
     public int getStationType() {
         return StationType;
@@ -48,6 +29,7 @@ public class Station{
     public void setStationType(int stype){
         this.StationType = stype;
     }
+   
 }
 
 
