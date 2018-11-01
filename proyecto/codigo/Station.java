@@ -27,9 +27,9 @@ public class Station{
     }
 
     //Obtener G
-    public double getG() {
-        return G;
-    }
+    //public double getG() {
+    //    return G;
+    //}
 
     //Setear L
     public void setL(double l) {
@@ -37,9 +37,9 @@ public class Station{
     }
 
     //Setear G
-    public void setG(double g) {
-        G = g;
-    }
+    //public void setG(double g) {
+    //    G = g;
+    //}
 
     public int getStationType() {
         return StationType;
