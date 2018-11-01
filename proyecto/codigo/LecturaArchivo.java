@@ -4,7 +4,6 @@ import java.io.*;
 public class LecturaArchivo {
     int n;
     int m;
-    // number of unvisited clients
     int u;
     int breaks;
     double r;
